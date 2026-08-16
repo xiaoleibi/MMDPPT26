@@ -275,6 +275,14 @@
             background: linear-gradient(transparent 60%, rgba(180, 83, 28, 0.22) 60%);
             padding: 0 2px;
         }
+        .atglance dd a {
+            border-bottom: 1px solid var(--rule);
+            transition: color .2s ease, border-color .2s ease;
+        }
+        .atglance dd a:hover {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
 
         @media (max-width: 820px) {
             .about__body { grid-template-columns: 1fr; }
@@ -353,31 +361,31 @@
                 <dl>
                     <div class="row">
                         <dt>Term</dt>
-                        <dd><span class="placeholder">Spring 2026</span></dd>
+                        <dd>fall 2026</dd>
                     </div>
                     <div class="row">
                         <dt>Format</dt>
-                        <dd><span class="placeholder">Studio + critique</span></dd>
+                        <dd>teori + Hands-ON</dd>
                     </div>
                     <div class="row">
                         <dt>Level</dt>
-                        <dd><span class="placeholder">Undergraduate / year 2–3</span></dd>
+                        <dd>MMdD / semester 1</dd>
                     </div>
                     <div class="row">
                         <dt>Credits</dt>
-                        <dd><span class="placeholder">[X] ECTS</span></dd>
+                        <dd>10 ECTS</dd>
                     </div>
                     <div class="row">
                         <dt>Prereq</dt>
-                        <dd><span class="placeholder">[Course code or 'none']</span></dd>
+                        <dd>intro Scratch</dd>
                     </div>
                     <div class="row">
-                        <dt>Studio</dt>
-                        <dd><span class="placeholder">[Building, room, studio manager]</span></dd>
+                        <dt>Books</dt>
+                        <dd><a href="https://koder.systime.dk/" target="_blank" rel="noopener">koder.systime.dk</a></dd>
                     </div>
                     <div class="row">
                         <dt>Taught by</dt>
-                        <dd><span class="placeholder">[Lead instructor + TAs]</span></dd>
+                        <dd>XBI</dd>
                     </div>
                 </dl>
             </aside>
