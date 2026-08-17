@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Scratch Algorithms Session</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+	<style>
+		:root {
+			--bg: #FAF5EC;
+			--bg-alt: #F2EAD9;
+			--ink: #0E0E12;
+			--ink-soft: #4A4A55;
+			--rule: #D8CFB8;
+			--accent: #E84A5F;
+			--accent-2: #FF8A3D;
+			--card: #FFF9EE;
+			--maxw: 920px;
+		}
+
+		* {
+			box-sizing: border-box;
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+			background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+			color: var(--ink);
+			line-height: 1.6;
+			min-height: 100vh;
+		}
+
+		.container {
+			width: min(var(--maxw), 92%);
+			margin: 0 auto;
+		}
+
+		header {
+			padding: 24px 0 14px;
+			border-bottom: 1px solid var(--rule);
+		}
+
+		.back-link {
+			display: inline-flex;
+			align-items: center;
+			gap: 8px;
+			color: var(--accent);
+			font-weight: 600;
+			text-decoration: none;
+			letter-spacing: 0.02em;
+		}
+
+		.back-link:hover {
+			color: var(--accent-2);
+		}
+
+		main {
+			padding: 40px 0 56px;
+		}
+
+		.hero {
+			margin-bottom: 28px;
+		}
+
+		.hero h1 {
+			font-family: 'Playfair Display', 'Times New Roman', serif;
+			font-size: clamp(2rem, 4vw, 3.2rem);
+			line-height: 1.1;
+			margin-bottom: 10px;
+		}
+
+		.hero p {
+			color: var(--ink-soft);
+			max-width: 62ch;
+		}
+
+		.sections {
+			display: grid;
+			gap: 18px;
+		}
+
+		.section-card {
+			background: var(--card);
+			border: 1px solid var(--rule);
+			border-left: 5px solid var(--accent);
+			border-radius: 14px;
+			padding: 20px;
+			box-shadow: 0 5px 20px rgba(14, 14, 18, 0.05);
+		}
+
+		.section-card h2 {
+			font-family: 'Playfair Display', 'Times New Roman', serif;
+			font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+			margin-bottom: 8px;
+		}
+
+		.section-card p {
+			color: var(--ink-soft);
+		}
+
+		.exercise-list {
+			margin-top: 10px;
+			padding-left: 18px;
+			color: var(--ink-soft);
+		}
+
+		.exercise-list li + li {
+			margin-top: 6px;
+		}
+
+		@media (max-width: 640px) {
+			main {
+				padding-top: 28px;
+			}
+
+			.section-card {
+				padding: 16px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="container">
+			<a class="back-link" href="index.html" aria-label="Back to home page">
+				<span aria-hidden="true">&larr;</span>
+				<span>Back to Index</span>
+			</a>
+		</div>
+	</header>
+
+	<main class="container">
+		<section class="hero">
+			<h1>Scratch + Algorithms Session</h1>
+			<p>
+				This page introduces Scratch and algorithmic thinking in a beginner-friendly flow.
+				The text below is a placeholder you can replace with your lesson script and examples.
+			</p>
+		</section>
+
+		<section class="sections" aria-label="Session content">
+			<article class="section-card" id="intro-scratch">
+				<h2>Introduction to Scratch</h2>
+				<p>
+					Scratch is a visual programming platform where you build programs by snapping blocks together.
+					In this session, learners explore sprites, the stage, and basic events such as when green flag clicked.
+					Placeholder note: add a 5-minute demo and student warm-up activity here.
+				</p>
+			</article>
+
+			<article class="section-card" id="intro-algorithms">
+				<h2>Introduction to Algorithms</h2>
+				<p>
+					An algorithm is a clear, ordered list of steps to solve a problem.
+					We connect this idea to Scratch by showing how motion, loops, and condition blocks form repeatable logic.
+					Placeholder note: include one unplugged activity where students write steps for a simple daily task.
+				</p>
+			</article>
+
+			<article class="section-card" id="hands-on-exercise">
+				<h2>Hands-On Exercise: Build a Fold Ball Game in Scratch</h2>
+				<p>
+					Learners create a simple Fold Ball game (placeholder title based on your session wording) to practice sequencing,
+					repetition, and score logic.
+				</p>
+				<ol class="exercise-list">
+					<li>Set up the stage, choose sprites, and define the game goal with placeholder instructions.</li>
+					<li>Program ball movement and bounce behavior using motion and condition blocks.</li>
+					<li>Add player controls, score updates, and a basic win or game-over condition.</li>
+					<li>Test, debug, and improve the game with placeholder reflection prompts.</li>
+				</ol>
+			</article>
+		</section>
+	</main>
+</body>
+</html>
