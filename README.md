@@ -12,4 +12,4 @@ Safari: Cmd + Option + R
 ( you best to have GitHub desktop installed to  commit and push  )
 
 URL address
-https://github.com/xiaoleibi/MMDPPT26
+https://xiaoleibi.github.io/MMDPPT26/
