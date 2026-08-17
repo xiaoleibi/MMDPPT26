@@ -452,6 +452,50 @@
             color: var(--ink);
             font-weight: 500;
         }
+        .themes__name a {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent);
+            text-shadow: 0 0 16px rgba(232, 74, 95, 0.2);
+            transition: color .25s ease, transform .25s ease, text-shadow .25s ease;
+        }
+        .themes__name a::after {
+            content: "open";
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 999px;
+            border: 1px solid rgba(232, 74, 95, 0.35);
+            background: linear-gradient(135deg, rgba(232, 74, 95, 0.14), rgba(255, 138, 61, 0.16));
+        }
+        .themes__name a::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: -4px;
+            height: 2px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-2));
+            transform: scaleX(0.25);
+            transform-origin: left center;
+            transition: transform .28s cubic-bezier(.4, 0, .2, 1);
+        }
+        .themes__name a:hover,
+        .themes__name a:focus-visible {
+            color: #c73452;
+            transform: translateX(2px);
+            text-shadow: 0 0 20px rgba(232, 74, 95, 0.34);
+            outline: none;
+        }
+        .themes__name a:hover::before,
+        .themes__name a:focus-visible::before {
+            transform: scaleX(1);
+        }
         @keyframes rise {
             from { opacity: 0; transform: translateY(14px); }
             to   { opacity: 1; transform: translateY(0); }
@@ -587,7 +631,7 @@
         <div class="themes">
             <h3 class="themes__title">The course, in themes</h3>
             <ol class="themes__list">
-                <li><span class="themes__num">01</span><span class="themes__name"><a href="AlgorithmsScrach.html">Algorithms &amp; Scratch</a></span></li>
+                <li><span class="themes__num">01</span><span class="themes__name"><a href="AlgorithmsScrach.html" aria-label="Open Algorithms and Scratch session page">Algorithms &amp; Scratch</a></span></li>
                 <li><span class="themes__num">02</span><span class="themes__name">HTML</span></li>
                 <li><span class="themes__num">03</span><span class="themes__name">CSS / Bootstrap</span></li>
                 <li><span class="themes__num">04</span><span class="themes__name">Midvejs project</span></li>
