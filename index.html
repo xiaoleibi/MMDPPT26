@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MMDPPT26 — Multimedia Design & Presentation</title>
+    <title>MMDPPT26 — Multimediedesign og præsentation</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/common.css">
     <style>
-        /* Subtle paper-grain overlay (fixed, very low opacity, sits above everything) */
+        /* Diskret papirkorn-overlay (fast, meget lav opacitet, ligger over alt) */
         body::after {
             content: "";
             position: fixed;
@@ -88,7 +88,7 @@
             .nav__links { display: none; }
         }
 
-        /* ---------- Hero ---------- */
+        /* ---------- Forside ---------- */
         .hero {
             position: relative;
             padding: clamp(96px, 16vh, 180px) 0 clamp(80px, 12vh, 140px);
@@ -213,7 +213,7 @@
             .hero__meta { text-align: left; }
         }
 
-        /* ---------- Section ---------- */
+        /* ---------- Sektion ---------- */
         section {
             padding: clamp(80px, 12vh, 140px) 0;
             position: relative;
@@ -221,13 +221,13 @@
         section + section { border-top: 1px solid var(--rule-soft); }
         .hero { border-bottom: none; }
 
-        /* Alternating section backgrounds */
+        /* Skiftevis sektionsbaggrunde */
         section#about    { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%); }
         section#modules  { background: linear-gradient(160deg, var(--bg-dark) 0%, var(--bg-dark-2) 100%); color: #FAF5EC; }
         section#projects { background: var(--bg); }
         section#studio   { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-soft) 100%); }
 
-        /* Dark-section color inversions */
+        /* Farveinvertering i mørk sektion */
         section#modules h2,
         section#modules h3 { color: #FAF5EC; }
         section#modules .eyebrow { color: var(--accent-2); }
@@ -265,7 +265,7 @@
             .section__head { grid-template-columns: 1fr; gap: 20px; margin-bottom: 40px; }
         }
 
-        /* ---------- About / two-column ---------- */
+        /* ---------- Om kurset / to kolonner ---------- */
         .about__body {
             display: grid;
             grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr);
@@ -339,7 +339,7 @@
             border-bottom-color: var(--accent);
         }
 
-        /* ---------- Themes (inside About) ---------- */
+        /* ---------- Temaer (under Om kurset) ---------- */
         .themes { margin-top: 80px; }
         .themes__title {
             font-family: 'Inter', sans-serif;
@@ -393,7 +393,7 @@
             transition: color .25s ease, transform .25s ease, text-shadow .25s ease;
         }
         .themes__name a::after {
-            content: "open";
+            content: "åbn";
             font-family: 'Inter', sans-serif;
             font-size: 10px;
             letter-spacing: 0.14em;
@@ -443,7 +443,7 @@
             .about__body { grid-template-columns: 1fr; }
         }
 
-        /* ---------- Weekly Schedule ---------- */
+        /* ---------- Ugeplan ---------- */
         section#schedule {
             background:
                 radial-gradient(ellipse 75% 60% at 88% 8%, rgba(255, 138, 61, 0.16), transparent 62%),
@@ -562,7 +562,7 @@
             }
         }
 
-        /* ---------- Footer ---------- */
+        /* ---------- Sidefod ---------- */
         footer {
             padding: 80px 0 48px;
             font-size: 12px;
@@ -582,7 +582,7 @@
             border-bottom-color: var(--accent-2);
         }
 
-        /* ---------- Reduced motion ---------- */
+        /* ---------- Reduceret bevægelse ---------- */
         @media (prefers-reduced-motion: reduce) {
             .hero__blob { animation: none !important; }
         }
@@ -594,17 +594,17 @@
 <header class="nav">
     <div class="container nav__inner">
         <a href="#" class="nav__logo">MMDPPT<span>·</span>26</a>
-        <nav class="nav__links" aria-label="Primary">
-            <a href="#about">About</a>
-            <a href="#modules">Modules</a>
-            <a href="#projects">Projects</a>
-            <a href="#studio">Studio</a>
+        <nav class="nav__links" aria-label="Primær navigation">
+            <a href="#about">Om kurset</a>
+            <a href="#modules">Moduler</a>
+            <a href="#projects">Projekter</a>
+            <a href="#studio">Studie</a>
         </nav>
-        <span class="nav__meta">Fall · 2026</span>
+        <span class="nav__meta">Efterår · 2026</span>
     </div>
 </header>
 
-<!-- ============== HERO ============== -->
+<!-- ============== FORSIDE ============== -->
 <section class="hero">
     <div class="hero__bg" aria-hidden="true">
         <div class="hero__blob hero__blob--1"></div>
@@ -612,70 +612,70 @@
         <div class="hero__blob hero__blob--3"></div>
     </div>
     <div class="container hero__inner">
-        <span class="eyebrow">Course · Spring 2026</span>
-        <h1>Multimedia designer,<br>you need to learn how to <em>program.</em></h1>
+        <span class="eyebrow">Kursus · Forår 2026</span>
+        <h1>Multimediedesigner,<br>lærer at <em>programmere.</em></h1>
 
         <div class="hero__lede">
-            <p>According to the national studieordning, you have to learn to program in your first study year — the aim is to better understand computer technology and web programming, and to prepare you for your future career.</p>
+            <p>Ifølge den nationale studieordning skal du lære at programmere på dit første studieår. Målet er at opnå en bedre forståelse af computerteknologi og webprogrammering samt at forberede dig på din fremtidige karriere.</p>
             <div class="hero__meta">
-                <span class="placeholder">[Section · Day · Time]</span><br>
-                <span class="placeholder">[Room / studio location]</span>
+                <span class="placeholder">[Sektion · Dag · Tid]</span><br>
+                <span class="placeholder">[Lokale / studiested]</span>
             </div>
         </div>
 
-        <a href="#about" class="hero__cta">Read about this course ↓</a>
+        <a href="#about" class="hero__cta">Læs om kurset ↓</a>
     </div>
 </section>
 
-<!-- ============== ABOUT ============== -->
+<!-- ============== OM KURSET ============== -->
 <section id="about">
     <div class="container">
         <div class="section__head">
-            <span class="eyebrow">01 — About</span>
-            <h2>About <em>the course.</em></h2>
+            <span class="eyebrow">01 — Om kurset</span>
+            <h2>Om <em>kurset.</em></h2>
         </div>
 
         <div class="about__body">
             <div class="about__text">
-                <p>  programming course semester 1 overview.</p>
+                <p>Overblik over programmeringskurset på 1. semester.</p>
                 <p>
-                    <span class="placeholder">[Approach paragraph. How the term is structured — lecturer-based, project-based, lectures, hands-on exercises, large group projects.
-                         Mention the deliverable cadence (weekly exercises in teams, feedback and reviews, weekly1-1).]</span>
+                    <span class="placeholder">[Afsnit om tilgang. Sådan er semestret struktureret: lærerstyret, projektbaseret, forelæsninger, praktiske øvelser og større gruppeprojekter.
+                        Nævn afleveringsrytmen: ugentlige teamøvelser, feedback og evalueringer samt ugentlige 1-til-1-samtaler.]</span>
                 </p>
                 <p>
-                    <span class="placeholder">[Outcomes paragraph. What students will be able to do by the end of the course — specific skills (scripting, motion, sound, interaction, presentation) and one or two qualities (visual judgment, critique vocabulary, collaboration).]</span>
+                    <span class="placeholder">[Afsnit om læringsudbytte. Det skal de studerende kunne ved kursets afslutning: konkrete færdigheder som scripting, motion, lyd, interaktion og præsentation samt en eller to egenskaber som visuel dømmekraft, et kritisk fagsprog og samarbejde.]</span>
                 </p>
             </div>
 
-            <aside class="atglance" aria-label="At a glance">
-                <h3>At a glance</h3>
+            <aside class="atglance" aria-label="Kort overblik">
+                <h3>Kort overblik</h3>
                 <dl>
                     <div class="row">
-                        <dt>Term</dt>
-                        <dd>fall 2026</dd>
+                        <dt>Semester</dt>
+                        <dd>efterår 2026</dd>
                     </div>
                     <div class="row">
                         <dt>Format</dt>
-                        <dd>teori + Hands-ON</dd>
+                        <dd>teori + praktisk arbejde</dd>
                     </div>
                     <div class="row">
-                        <dt>Level</dt>
+                        <dt>Niveau</dt>
                         <dd>MMD / semester 1</dd>
                     </div>
                     <div class="row">
-                        <dt>Credits</dt>
+                        <dt>ECTS-point</dt>
                         <dd>10 ECTS</dd>
                     </div>
                     <div class="row">
-                        <dt>Prereq</dt>
-                        <dd>intro Scratch</dd>
+                        <dt>Forudsætning</dt>
+                        <dd>introduktion til Scratch</dd>
                     </div>
                     <div class="row">
-                        <dt>Books</dt>
+                        <dt>Bøger</dt>
                         <dd><a href="https://koder.systime.dk/" target="_blank" rel="noopener">koder.systime.dk</a></dd>
                     </div>
                     <div class="row">
-                        <dt>Taught by</dt>
+                        <dt>Underviser</dt>
                         <dd>XBI</dd>
                     </div>
                 </dl>
@@ -683,30 +683,30 @@
         </div>
 
         <div class="themes">
-            <h3 class="themes__title">The course, in themes</h3>
+            <h3 class="themes__title">Kursets temaer</h3>
             <ol class="themes__list">
-                <li><span class="themes__num">01</span><span class="themes__name"><a href="AlgorithmsScrach.html" aria-label="Open Algorithms and Scratch session page">Algorithms &amp; Scratch</a></span></li>
+                <li><span class="themes__num">01</span><span class="themes__name"><a href="AlgorithmsScrach.html" aria-label="Åbn siden om algoritmer og Scratch">Algoritmer og Scratch</a></span></li>
                 <li><span class="themes__num">02</span><span class="themes__name">HTML</span></li>
                 <li><span class="themes__num">03</span><span class="themes__name">CSS / Bootstrap</span></li>
-                <li><span class="themes__num">04</span><span class="themes__name">Midvejs project</span></li>
-                <li><span class="themes__num">05</span><span class="themes__name">RWD · Responsive Web Design</span></li>
+                <li><span class="themes__num">04</span><span class="themes__name">Midtvejsprojekt</span></li>
+                <li><span class="themes__num">05</span><span class="themes__name">RWD · Responsivt webdesign</span></li>
                 <li><span class="themes__num">06</span><span class="themes__name">GitHub</span></li>
-                <li><span class="themes__num">07</span><span class="themes__name">Final project</span></li>
+                <li><span class="themes__num">07</span><span class="themes__name">Afsluttende projekt</span></li>
             </ol>
         </div>
     </div>
 </section>
 
-<!-- ============== weekly schedule ============== -->
+<!-- ============== Ugeplan ============== -->
 <section id="schedule">
     <div class="container">
         <div class="section__head">
-            <span class="eyebrow">02 — Weekly Schedule</span>
-            <h2>Term <em>week plan.</em></h2>
+            <span class="eyebrow">02 — Ugeplan</span>
+            <h2>Semesterets <em>ugeplan.</em></h2>
         </div>
 
         <div class="schedule">
-            <article class="schedule__week" aria-label="Week 37 schedule">
+            <article class="schedule__week" aria-label="Ugeplan for uge 37">
                 <div class="schedule__head">
                     <span class="schedule__weeklabel">Uge 37</span>
                     <div class="schedule__meta">
@@ -727,7 +727,7 @@
 
 <footer>
     <div class="container">
-        © 2026 MMDPPT26 — Studio course, Department of Multimedia Design · <a href="aboutme.html">About me</a>
+        © 2026 MMDPPT26 — Studiokursus, Institut for Multimediedesign · <a href="aboutme.html">Om mig</a>
     </div>
 </footer>
 
