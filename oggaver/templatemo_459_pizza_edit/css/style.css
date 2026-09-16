@@ -1,0 +1,142 @@
+:root {
+	--theme-green: #174d3a;
+	--theme-green-dark: #000604;
+	--theme-green-light: #e7f1ec;
+	--theme-cream: #f8fbf9;
+	--theme-text: #26352e;
+}
+
+body {
+	background: var(--theme-cream);
+	color: var(--theme-text);
+	/* Body text uses Arial; headings keep their existing typography. */
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar-default .navbar-nav a,
+.navbar-default .navbar-nav .nav-link,
+.navbar-default .navbar-brand {
+	color: var(--theme-green);
+}
+
+/* Use Signika consistently for all heading levels. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Signika', sans-serif;
+}
+
+/* Use Signika for the PIZZA logo. */
+.navbar-default .navbar-brand {
+	font-family: 'Signika', sans-serif;
+}
+
+/* Use Arial for the navigation items. */
+.navbar-default .navbar-nav a,
+.navbar-default .navbar-nav .nav-link {
+	font-family: Arial, sans-serif;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-size: 2rem;
+}
+
+h3 {
+	font-size: 1.5rem;
+}
+
+a {
+	color: var(--theme-green);
+}
+
+a:hover,
+a:focus {
+	color: var(--theme-green-dark);
+}
+
+hr {
+	border-color: var(--theme-green);
+}
+
+.navbar-default {
+	background: #ffffff;
+	border-bottom: 3px solid var(--theme-green);
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav a,
+.navbar-default .navbar-nav .nav-link {
+	color: var(--theme-green);
+}
+
+.navbar-default .navbar-nav a:hover,
+.navbar-default .navbar-nav a:focus,
+.navbar-default .navbar-nav .nav-link:hover,
+.navbar-default .navbar-nav .nav-link:focus,
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover {
+	color: var(--theme-green-dark);
+}
+
+/* Highlight the section selected by the URL without JavaScript. */
+body:has(#about:target) .navbar-default .navbar-nav a[href="#about"],
+body:has(#gallery:target) .navbar-default .navbar-nav a[href="#gallery"],
+body:has(#contact:target) .navbar-default .navbar-nav a[href="#contact"] {
+	text-decoration: underline;
+	text-decoration-color: var(--theme-green-dark);
+	text-decoration-thickness: 2px;
+	text-underline-offset: 6px;
+}
+
+.navbar-default .navbar-toggler .icon-bar {
+	background: var(--theme-green);
+}
+
+.templatemo-light-gray-bg {
+	background: var(--theme-green-light);
+}
+
+.gallery-wrapper {
+	padding: 20px;
+}
+
+.form-control:focus {
+	border-color: var(--theme-green);
+	box-shadow: 0 0 0 0.2rem rgba(23, 77, 58, 0.2);
+}
+
+.form-control:active,
+input[type="submit"]:hover {
+	border-color: var(--theme-green);
+}
+
+#submit,
+.social-icon li a:hover {
+	background: var(--theme-green);
+	color: #ffffff;
+}
+
+.contact-link,
+.contact-fa,
+.social-icon li a {
+	color: var(--theme-green);
+}
+
+footer {
+	background: var(--theme-green-dark);
+}
