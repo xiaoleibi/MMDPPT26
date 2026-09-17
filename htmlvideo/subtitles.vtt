@@ -1,0 +1,31 @@
+WEBVTT
+
+00:00:01.000 --> 00:00:04.000
+Welcome to the video player.
+
+00:00:05.000 --> 00:00:08.000
+This is a sample subtitle file.
+
+00:00:09.000 --> 00:00:12.000
+You can edit these subtitles to match your video.
+
+00:00:13.000 --> 00:00:16.000
+Each subtitle block has a number, time range, and text.
+
+00:00:17.000 --> 00:00:20.000
+Enjoy watching!
+
+00:00:21.000 --> 00:00:25.000
+To add your own subtitles, edit this SRT file.
+
+00:00:26.000 --> 00:00:30.000
+Each entry follows this format:
+
+00:00:31.000 --> 00:00:35.000
+Replace the timing and text to sync with your video.
+
+00:00:36.000 --> 00:00:40.000
+Multiple lines can be used for longer subtitles.
+
+00:00:41.000 --> 00:00:45.000
+Thank you for using this video player.
