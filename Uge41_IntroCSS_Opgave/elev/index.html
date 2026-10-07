@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uge 41 &ndash; Mit profilkort</title>
+
+  <!-- ==========================================================
+       METODE 2: INTERNT STYLESHEET (embedded)
+       Reglerne her gælder KUN for denne ene HTML-fil.
+       Blokken står med vilje FØR <link> - se opgave 1d.
+       ========================================================== -->
+  <style>
+    body {
+      background-color: #eef3f7;
+    }
+
+    .undertitel {
+      letter-spacing: 1px;
+    }
+  </style>
+
+  <!-- ==========================================================
+       METODE 1: EKSTERNT STYLESHEET (external)
+       Reglerne ligger i css/style.css og kan deles af mange sider.
+       ========================================================== -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header class="sidehoved">
+    <h1>Mit profilkort</h1>
+    <p class="undertitel">Uge 41 &middot; Introduktion til CSS</p>
+  </header>
+
+  <main>
+
+    <!-- ========================================================
+         METODE 3: INLINE STYLE
+         style-attributten sidder direkte på det enkelte element.
+         ======================================================== -->
+    <section id="kort" class="kort" style="border-left: 6px solid #e63946;">
+
+      <h2>Navn Efternavn</h2>
+
+      <p class="intro">
+        Jeg læser multimediedesign og arbejder mest med
+        <span class="highlight">frontend-udvikling</span>.
+        I dette forløb har jeg lært at skille struktur og præsentation ad,
+        så indholdet kan genbruges i mange forskellige designs.
+      </p>
+
+      <h3>Kompetencer</h3>
+      <ul class="kompetencer">
+        <li>Semantisk HTML5</li>
+        <li>CSS-selektorer</li>
+        <li>Billedformater og multimedie</li>
+        <li>Versionsstyring med Git</li>
+      </ul>
+
+      <h3>Sådan arbejder jeg</h3>
+      <ol class="trin">
+        <li>Læser opgaven og skriver krav ned</li>
+        <li>Bygger strukturen i HTML</li>
+        <li>Styler med CSS i et eksternt stylesheet</li>
+        <li>Tester i browserens developer tools</li>
+      </ol>
+
+    </section>
+
+  </main>
+
+  <footer class="sidefod">
+    <p>&copy; 2026 &middot; Navn Efternavn &middot; Uge 41</p>
+  </footer>
+
+</body>
+</html>

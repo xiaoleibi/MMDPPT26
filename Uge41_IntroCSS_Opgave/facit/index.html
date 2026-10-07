@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uge 41 &ndash; Mit profilkort (FACIT)</title>
+
+  <!-- ==========================================================
+       METODE 2: INTERNT STYLESHEET (embedded)
+       Et <style>-element i <head>. Reglerne gaelder KUN for
+       denne ene HTML-fil og skal kopieres ind i hver ny side.
+       Bemærk: blokken står FØR <link>. Ved lige stor specificitet
+       vinder den regel, der står SIDST i kildekoden - altså den
+       eksterne fil. Se opgave 1c og 1d.
+       ========================================================== -->
+  <style>
+    /* Rammer <body>. Den eksterne fil saetter også background-color
+       på body - samme selektor, samme specificitet, derfor vinder
+       den eksterne regel, fordi <link> står efter denne blok. */
+    body {
+      background-color: #eef3f7;
+    }
+
+    /* Rammer alle elementer med class="undertitel".
+       Klassen .undertitel findes også i den eksterne fil.
+       Her tilføjes letter-spacing - de to regler lægges sammen
+       (ingen konflikt, forskellige properties). */
+    .undertitel {
+      letter-spacing: 1px;
+    }
+  </style>
+
+  <!-- ==========================================================
+       METODE 1: EKSTERNT STYLESHEET (external)
+       rel="stylesheet" fortæller, at filen er et stylesheet.
+       href er stien til filen (relativ sti her).
+       Fordelen: én fil kan deles af hele sitet - én rettelse
+       slår igennem overalt.
+       ========================================================== -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- class="sidehoved" -> rammes af .sidehoved i style.css -->
+  <header class="sidehoved">
+    <!-- <h1> er både elementselektor (h1) og har ingen klasse -->
+    <h1>Mit profilkort</h1>
+    <p class="undertitel">Uge 41 &middot; Introduktion til CSS</p>
+  </header>
+
+  <main>
+
+    <!-- ========================================================
+         METODE 3: INLINE STYLE
+         style-attributten sidder direkte på elementet og har
+         højeste prioritet (bortset fra !important).
+         Her overskriver den border-left fra .kort i style.css:
+         den eksterne regel giver grå (#cccccc), inline giver rød.
+         Resultat: kanten bliver RØD.
+         ======================================================== -->
+    <section id="kort" class="kort" style="border-left: 6px solid #e63946;">
+
+      <!-- Rammes af elementselektoren h2 -->
+      <h2>Navn Efternavn</h2>
+
+      <!-- Rammes af .intro. <span> indeni rammes af .highlight -->
+      <p class="intro">
+        Jeg læser multimediedesign og arbejder mest med
+        <span class="highlight">frontend-udvikling</span>.
+        I dette forløb har jeg lært at skille struktur og præsentation ad,
+        så indholdet kan genbruges i mange forskellige designs.
+      </p>
+
+      <!-- Rammes af elementselektoren h3 -->
+      <h3>Kompetencer</h3>
+
+      <!-- <ul> rammes af .kompetencer, hvert <li> af .kompetencer li -->
+      <ul class="kompetencer">
+        <li>Semantisk HTML5</li>
+        <li>CSS-selektorer</li>
+        <li>Billedformater og multimedie</li>
+        <li>Versionsstyring med Git</li>
+      </ul>
+
+      <h3>Sådan arbejder jeg</h3>
+
+      <!-- <ol> rammes af .trin, hvert <li> af .trin li -->
+      <ol class="trin">
+        <li>Læser opgaven og skriver krav ned</li>
+        <li>Bygger strukturen i HTML</li>
+        <li>Styler med CSS i et eksternt stylesheet</li>
+        <li>Tester i browserens developer tools</li>
+      </ol>
+
+    </section>
+
+  </main>
+
+  <!-- Rammes af .sidefod. <p> indeni arver color og text-align -->
+  <footer class="sidefod">
+    <p>&copy; 2026 &middot; Navn Efternavn &middot; Uge 41</p>
+  </footer>
+
+</body>
+</html>

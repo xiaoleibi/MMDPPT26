@@ -1,0 +1,352 @@
+/* ============================================================
+   style.css - profilkort  (FACIT)
+   Kommenteret facit til Uge 41 - Introduktion til CSS.
+   Alle regler er kommenteret med HVAD den gør, HVILKE elementer
+   den rammer, og HVORFOR den står som den gør.
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   ROOT-INDSTILLING
+   ------------------------------------------------------------ */
+
+/* Elementselektor: rammer <html>-elementet (hele dokumentet).
+   font-size: 16px er standard i moderne browsere, men vi saetter
+   den eksplicit, fordi alle rem-vaerdier i filen regnes ud fra
+   netop denne vaerdi. 1rem = 16px her. */
+html {
+  font-size: 16px;
+}
+
+
+/* ------------------------------------------------------------
+   SIDE + BAGGRUND
+   ------------------------------------------------------------ */
+
+/* Elementselektor: rammer <body>, altsaa alt synligt indhold.
+   Reglerne her arves videre ned til de elementer, der ikke selv
+   saetter den samme property. */
+body {
+  /* Font-fallback-kæde: browseren bruger den foerste font, den
+     kan finde. Georgia og "Times New Roman" er serif-fonte;
+     serif i sidste led er en generisk familienavn. */
+  font-family: Georgia, "Times New Roman", serif;
+
+  /* 1rem = 16px (se html-reglen ovenfor). Relativ enhed, saa
+     teksten skalerer med brugerens/rodens fontstørrelse. */
+  font-size: 1rem;
+
+  /* Linjehoejde 1.6 = 160 % af fontstørrelsen. Enhedsloest tal
+     ganger med elementets egen font-size og arves som forhold. */
+  line-height: 1.6;
+
+  /* HEX-farve: #RRGGBB. Her en moerk graa til al brodtekst. */
+  color: #222222;
+
+  /* BAGGRUNDSFARVE - HEX. Vises bag hele siden. */
+  background-color: #f4f1ea;
+
+  /* BAGGRUNDSBBILLEDE - sti i anfoerselstegn, relativ til denne
+     CSS-fil (derfor "../img/..." op et niveau og ned i img/). */
+  background-image: url("../img/monster.svg");
+
+  /* repeat = billedet gentages baade vandret og lodret og
+     daekker hele fladen. Alternativer: no-repeat, repeat-x,
+     repeat-y. */
+  background-repeat: repeat;
+
+  /* Udgangspunkt for gentagelsen: oeverste venstre hjoerne. */
+  background-position: top left;
+
+  /* Skalerer monsteret op til 24x24 px (SVG'en er 24x24). */
+  background-size: 24px 24px;
+
+  /* Fjerner browserens standard-margin omkring body. */
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ------------------------------------------------------------
+   SIDEFOD (header i toppen af siden)
+   ------------------------------------------------------------ */
+
+/* Klasseslektor (punktum): rammer alle elementer med
+   class="sidehoved". Klassenavnet kan genbruges flere steder. */
+.sidehoved {
+  /* Fallback-farve hvis gradienten ikke understoettes. */
+  background-color: #1d3557;
+
+  /* BAGGRUND MED GRADIENT: linear-gradient() er en funktion, der
+     bruges som vaerdi for background-image.
+     180deg = oppefra og ned. #1d3557 ved 0 %, #2a4d7a ved 100 %. */
+  background-image: linear-gradient(180deg, #1d3557 0%, #2a4d7a 100%);
+
+  /* NAVNGIVET FARVE: "white" er praecis det samme som #ffffff.
+     Vaerdien arves videre til <h1>, som IKKE har sin egen
+     color-regel. .undertitel har derimod sin egen color
+     (#a8dadc) og overskriver derfor arven.
+     Det er baggrunden for opgave 5c. */
+  color: white;
+
+  /* Padding: 40px lodret, 24px vandret. Indvendig luft. */
+  padding: 40px 24px;
+
+  /* CSS TEKST: centrerer alt inline-indhold vandret. */
+  text-align: center;
+}
+
+
+/* ------------------------------------------------------------
+   OVERSKRIFT 1
+   ------------------------------------------------------------ */
+
+/* Elementselektor: rammer ALLE <h1> i dokumentet. */
+h1 {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  /* 2.5rem = 2.5 x 16px = 40px */
+  font-size: 2.5rem;
+  /* bold = 700. Andre vaerdier: normal, 100-900. */
+  font-weight: bold;
+  /* CSS TEKST: afstand mellem bogstaverne. */
+  letter-spacing: 3px;
+  /* CSS TEKST: viser teksten med STORE bogstaver uden at aendre
+     teksten i HTML'en. Alternativer: lowercase, capitalize. */
+  text-transform: uppercase;
+  /* CSS TEKST: skygge. 2px vandret, 2px lodret, 6px sloering,
+     rgba = sort med 45 % gennemsigtighed (alpha 0-1). */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.45);
+  /* Forkortet margin: 0 top, 10px hoejre, 0 bund, 10px venstre
+     - dvs. kun luft under overskriften. */
+  margin: 0 0 10px 0;
+}
+
+
+/* ------------------------------------------------------------
+   UNDERTITEL
+   ------------------------------------------------------------ */
+
+/* Klassen .undertitel findes OGSAA i <style>-blokken i
+   index.html (letter-spacing). De to regler konflikter ikke,
+   saa begge virker. Saetter begge den samme property, ville den
+   sidste i kildekoden vinde (samme specificitet). */
+.undertitel {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  /* 0.875rem = 0.875 x 16px = 14px */
+  font-size: 0.875rem;
+  /* CSS FONT: kursiv. Alternativer: normal, oblique. */
+  font-style: italic;
+  font-weight: normal;
+  color: #a8dadc;
+  margin: 0;
+}
+
+
+/* ------------------------------------------------------------
+   INDHOLDETS BREDDE
+   ------------------------------------------------------------ */
+
+/* Rammer <main>. Ingen klasse - der findes kun ét <main>. */
+main {
+  /* Stopper med at vokse ved 760px og centreres af auto-margin. */
+  max-width: 760px;
+  /* 40px lodret, auto vandret = centreret blok. */
+  margin: 40px auto;
+  padding: 0 16px;
+}
+
+
+/* ------------------------------------------------------------
+   KORTET  (class vs id - se ogsaa #kort nedenfor)
+   ------------------------------------------------------------ */
+
+/* Klasseslektor: rammer alt med class="kort". */
+.kort {
+  /* Denne baggrund bliver OVERSKREVET af #kort nedenfor,
+     fordi et id (0,1,0,0) vejer tungere end en klasse (0,0,1,0). */
+  background-color: #f0f0f0;
+
+  /* Denne graa kant bliver OVERSKREVET af inline style i
+     index.html (som har hoejere prioritet end alt her). */
+  border-left: 6px solid #cccccc;
+
+  /* 28px lodret, 32px vandret indvendig luft. */
+  padding: 28px 32px;
+
+  /* Afrundede hjoerner. */
+  border-radius: 8px;
+
+  /* Skygge: x=0, y=6px, blur=18px, rgba-sort med 18 % alpha. */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* ID-selektor (#): rammer det ENE element med id="kort".
+   Et id maa kun bruges én gang pr. side.
+   Her vinder den over .kort -> baggrunden bliver hvid. */
+#kort {
+  background-color: #ffffff;
+}
+
+
+/* ------------------------------------------------------------
+   OVERSKRIFT 2 OG 3
+   ------------------------------------------------------------ */
+
+h2 {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  /* 1.75rem = 28px */
+  font-size: 1.75rem;
+  /* HEX-farve paa overskriften - staerkt roed. */
+  color: #e63946;
+  text-align: left;
+  /* CSS TEKST: understregning. Alternativer: none, overline,
+     line-through. */
+  text-decoration: underline;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-family: "Trebuchet MS", Verdana, sans-serif;
+  font-size: 1.125rem;
+  color: #457b9d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+
+/* ------------------------------------------------------------
+   INTROTEKSTEN
+   ------------------------------------------------------------ */
+
+.intro {
+  /* 1.125rem = 18px */
+  font-size: 1.125rem;
+  /* Enhedsloest tal -> arves som forhold, ikke som px. */
+  line-height: 1.8;
+  /* CSS TEKST: justify = lige hoejre- og venstrekant. */
+  text-align: justify;
+  color: #333333;
+  margin-bottom: 24px;
+}
+
+
+/* ------------------------------------------------------------
+   MARKERING I TEKSTEN
+   ------------------------------------------------------------ */
+
+/* Klassen .highlight bruges inde i .intro paa et <span>.
+   Arver font-size og line-height fra .intro. */
+.highlight {
+  /* BAGGRUNDSFARVE paa et inline-element = "overstabilo". */
+  background-color: #ffe066;
+  color: #1d3557;
+  font-weight: bold;
+  /* 0 lodret, 4px vandret luft omkring markeringen. */
+  padding: 0 4px;
+  border-radius: 3px;
+}
+
+
+/* ------------------------------------------------------------
+   PUNKTLISTE  (ul)
+   ------------------------------------------------------------ */
+
+/* Klasseslektor: rammer <ul class="kompetencer">. */
+.kompetencer {
+  /* Type-markoer: firkant. MEN: naar list-style-image nedenfor
+     har et billede, IGNORERER browseren list-style-type.
+     Derfor ser man ikke firkanterne - kun det roede punkt. */
+  list-style-type: square;
+
+  /* BILLEDE som markoer. Overskriver list-style-type. */
+  list-style-image: url("../img/punkt.svg");
+
+  /* outside = markoeret staar ude i marginen, og teksten flugter.
+     inside = markoeret staar inde i tekstblokken. */
+  list-style-position: outside;
+
+  /* Luft til venstre, saa markoererne ikke ryger uden for kortet. */
+  padding-left: 24px;
+  margin-bottom: 24px;
+}
+
+/* EFTERKOMMER-SELEKTOR (descendant): mellemrum betyder "inde i".
+   Her: alle <li>, der ligger inde i .kompetencer.
+   Ikke alle <li> paa siden - kun dem i denne liste. */
+.kompetencer li {
+  font-size: 1rem;
+  color: #457b9d;
+  margin-bottom: 6px;
+}
+
+/* PSEUDO-KLASSE (:hover): reglen virker kun, naar musen er over
+   elementet. Kolon + tilstand. Andre: :first-child, :last-child,
+   :nth-child(), :visited, :focus. */
+.kompetencer li:hover {
+  color: #e63946;
+  text-decoration: underline;
+}
+
+
+/* ------------------------------------------------------------
+   NUMMERERET LISTE  (ol)
+   ------------------------------------------------------------ */
+
+.trin {
+  /* Romertal I, II, III, IV. Andre: decimal, lower-alpha,
+     upper-alpha, lower-roman, none. */
+  list-style-type: upper-roman;
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+/* Alle <li> i den nummererede liste faar en stiplet streg under. */
+.trin li {
+  padding: 6px 0;
+  /* dotted = stiplet. Andre: solid, dashed, double, none. */
+  border-bottom: 1px dotted #c9c9c9;
+}
+
+/* PSEUDO-KLASSE :last-child - kun det SIDSTE <li>.
+   Fjerner den stiplede streg, saa den ikke staar under hele listen. */
+.trin li:last-child {
+  border-bottom: none;
+}
+
+
+/* ------------------------------------------------------------
+   SIDEFOD
+   ------------------------------------------------------------ */
+
+.sidefod {
+  /* HSL-farve: hsl(grader, maetning %, lysstyrke %).
+     h=210 (blaa), s=30 %, l=20 % (moerk). */
+  background-color: hsl(210, 30%, 20%);
+
+  /* RGB-farve: rgb(roed, groen, blaa) med vaerdier 0-255.
+     Her en varm off-white, samme nuance som sidens baggrund. */
+  color: rgb(244, 241, 234);
+
+  /* 0.8125rem = 13px */
+  font-size: 0.8125rem;
+  text-align: center;
+  padding: 20px 16px;
+  margin-top: 48px;
+}
+
+
+/* ============================================================
+   FARVENOTATIONER BRUGT I DENNE FIL
+   ------------------------------------------------------------
+   Navngivet : #ffffff -> "white" (bruges i .sidehoved)
+   HEX       : #222222, #1d3557, #e63946, #a8dadc, #457b9d ...
+   rgb()     : rgb(244, 241, 234)                      (.sidefod)
+   rgba()    : rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.18)
+   hsl()     : hsl(210, 30%, 20%)                      (.sidefod)
+
+   rgba() = rgb() + alpha (0 = helt gennemsigtig, 1 = helt solid).
+   Bruges her i text-shadow og box-shadow, saa skyggen kan daempe
+   det underliggende indhold i stedet for at daekke det.
+   ============================================================ */
