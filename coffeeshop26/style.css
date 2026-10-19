@@ -1,0 +1,78 @@
+:root {
+    --color-canvas: #fbf8f3;
+    --color-surface: #faf6f0;
+    --color-stone: #f5efeb;
+    --color-dark: #1f1712;
+    --color-espresso: #2c241e;
+    --color-terracotta: #9e5a38;
+    --color-terracotta-hover: #b86b3e;
+    --color-sand: #7a6b5f;
+    --color-subtle: #9c8e80;
+    --color-border: #e6ddcf;
+    --color-border-subtle: #f0eae1;
+    --color-white: #fff;
+    --font-editorial: "Fraunces", Georgia, serif;
+    --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace
+}
+
+/* CSS reset */
+*,:before,:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html {
+    font-family: var(--font-body);
+    background-color: var(--color-canvas);
+    color: var(--color-espresso);
+   
+}
+
+body {
+    background-color: var(--color-canvas);
+    width: 100%;
+    min-width: 1200px;
+    min-height: 800px;
+    color: var(--color-espresso);
+    font-size: 15px;
+    line-height: 24px
+}
+
+img {
+    display: block
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+button,input,select,textarea {
+    font-family: inherit;
+    font-size: 13px
+}
+
+.font-editorial {
+    font-family: var(--font-editorial)
+}
+
+.font-mono {
+    font-family: var(--font-mono)
+}
+
+.container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px
+}
+
+.section {
+    width: 100%;
+    padding-top: 80px;
+    padding-bottom: 80px
+}
+ 
