@@ -1,78 +1,222 @@
+/* ==========================================================================
+   ATELIER ROAST — COLOURS
+   Fourteen values. That's the whole palette.
+   Every text colour below passes WCAG AA on --bg.
+   ========================================================================== */
+
 :root {
-    --color-canvas: #fbf8f3;
-    --color-surface: #faf6f0;
-    --color-stone: #f5efeb;
-    --color-dark: #1f1712;
-    --color-espresso: #2c241e;
-    --color-terracotta: #9e5a38;
-    --color-terracotta-hover: #b86b3e;
-    --color-sand: #7a6b5f;
-    --color-subtle: #9c8e80;
-    --color-border: #e6ddcf;
-    --color-border-subtle: #f0eae1;
-    --color-white: #fff;
-    --font-editorial: "Fraunces", Georgia, serif;
-    --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace
+  /* Grounds */
+  --bg: #f7f1e8;            /* the page                */
+  --surface: #fdfbf8;       /* cards, sheets           */
+  --band: #ede5d9;          /* banded sections         */
+
+  /* Text */
+  --text: #1a0f0a;          /* headings        16.8:1  */
+  --text-muted: #604a3b;    /* body copy        7.4:1  */
+  --text-subtle: #77604f;   /* small labels     5.2:1  */
+
+  /* Lines */
+  --border: #d1c2b3;        /* card + section edges    */
+  --border-strong: #8e7765; /* inputs, buttons  3.8:1  */
+
+  /* Accent */
+  --accent: #b24d2a;        /* 4.7:1 as text, 5.3:1 under white */
+  --accent-hover: #913c23;
+  --on-accent: #ffffff;
+
+  /* Dark — footer, overlays */
+  --dark: #110905;
+  --on-dark: #ede5d9;
+  --on-dark-muted: #bfae9e;
 }
 
-/* CSS reset */
-*,:before,:after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0
+/* ==========================================================================
+   BASE — 
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-html {
-    font-family: var(--font-body);
-    background-color: var(--color-canvas);
-    color: var(--color-espresso);
-   
+/* 1200px frame with 24px gutters → 1152px content box.
+   max-width:none is required — Bootstrap caps .container at 1140px. */
+.container {
+  width: 1200px;
+  max-width: none;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 body {
-    background-color: var(--color-canvas);
-    width: 100%;
-    min-width: 1200px;
-    min-height: 800px;
-    color: var(--color-espresso);
-    font-size: 15px;
-    line-height: 24px
+  background: var(--bg);
+  color: var(--text-muted);
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
 }
 
-img {
-    display: block
+h1,
+h2,
+h3,
+h4 {
+  color: var(--text);
 }
 
 a {
-    color: inherit;
-    text-decoration: none
+  color: var(--accent);
 }
 
-button,input,select,textarea {
-    font-family: inherit;
-    font-size: 13px
+a:hover {
+  color: var(--accent-hover);
 }
 
-.font-editorial {
-    font-family: var(--font-editorial)
+input,
+textarea,
+select {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
 }
 
-.font-mono {
-    font-family: var(--font-mono)
+/* ==========================================================================
+   HEADER & NAVIGATION
+   Three zones: wordmark left · the 3 nav links centred · action button right
+   ========================================================================== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
 }
 
-.container {
-    width: 1200px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 24px;
-    padding-right: 24px
+.header-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+  width: 1200px;
+  max-width: none;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 72px;
 }
 
-.section {
-    width: 100%;
-    padding-top: 80px;
-    padding-bottom: 80px
+/* Zone 3 — the action button sits at the far right */
+.header-inner > div {
+  justify-self: end;
 }
+
+.brand-wordmark {
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* --- The 3 nav links --- */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+/* hover — the text darkens */
+.nav-link:hover {
+  color: var(--text);
+}
+
+/* current page — the active nav item stays dark and gets the accent underline */
+.nav-link-active {
+  color: var(--text);
+  text-decoration-line: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 8px;
+}
+
+
+
+
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+
  
+.btn {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap; /* Keeps the button label on one line. */
+  cursor: pointer;
+}
+
+
+
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+
+.btn-outline:hover {
+  background: var(--text);
+  color: var(--on-accent);
+  border-color: var(--text);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--on-accent);
+  border: 1px solid var(--accent);
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.btn-dark {
+  background: var(--text);
+  color: var(--on-accent);
+  border: 1px solid var(--text);
+}
+
+.btn-dark:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.site-footer {
+  background: var(--dark);  /* dark footer block */
+  color: var(--on-dark);
+}
+
+.footer-text {
+  margin: 20px;               /* removes default outer space from the paragraph */
+  padding: 18px 0;         /* box-model: adds 28px top/bottom inner spacing */
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--on-dark-muted); /* text color inside the footer box */
+  background: var(--text-muted);        /* makes the footer text sit on a dark background */
+}
+
+
