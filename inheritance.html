@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="da">
+<head>
+
+    <meta charset="UTF-8">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CSS Inheritance Example</title>
+ 
+ 
+    <style>
+        
+/* Parent element */
+.parent {
+    margin: 30px;
+    padding: 20px;
+    border: 4px solid blue;
+
+    width: 400px;
+    height: 250px;
+
+    display: block;
+    position: relative;
+
+    background: lightblue;
+
+    font-family: Arial, sans-serif;
+}
+
+/* Child element */
+.child {
+    margin: 20px;
+    padding: 10px;
+    border: 2px solid red;
+
+    width: 200px;
+    height: 100px;
+
+    display: block;
+    position: relative;
+
+    background: lightcoral;
+    font-family: times, serif;
+}
+
+
+ 
+    </style>
+
+
+</head>
+<body>
+
+    <div class="parent">
+        <h2>Parent element</h2>
+        <p>Jeg er child element nummer 1.</p>
+
+        <div class="child">
+            Jeg er child element nummer 2.
+        </div>
+    </div>

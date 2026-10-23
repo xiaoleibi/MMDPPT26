@@ -1,0 +1,29 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Source Order</title>
+    <style>
+        .title {
+            color: red;
+            font-size: 24px;
+        }
+
+        .title {
+            color: blue;
+            font-size: 36px;
+        }
+        #title
+         {
+                color: green;
+                font-size: 48px;
+            }
+        </style>
+</head>
+<body>
+
+    <h1 class="title" style="color: yellow; font-size: 48px;">Hello CSS!</h1>
+     <h2 id="title">Hello CSS!</h2>
+</body>
+</html>
